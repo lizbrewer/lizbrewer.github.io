@@ -60,7 +60,7 @@ $(function () {
     // You must decide on the collectable type, the x position, the y position, the gravity, and the bounce strength
     // Your collectable choices are 'database' 'diamond' 'grace' 'kennedi' 'max' and 'steve'; more can be added if you wish
     // example usage: createCollectable(type, x, y, gravity, bounce)
-    createCollectable("steve", 500, 300, 20); // creates a "steve" collectible at the coordinates (500, 300), falling with a high gravity of 10, and bouncing with 10% bounce
+    createCollectable("steve", 600, 200, 20); // creates a "steve" collectible at the coordinates (500, 300), falling with a high gravity of 10, and bouncing with 10% bounce
     createCollectable("grace", 500, 300); // creates a "grace" collectible at the coordinates (500, 300), falling with default gravity and bouncing with default bounce %
     createCollectable("max", 400, 450); // creates a "max" collectible at the coordinates (200. 750). falling with a low gravity of -5 and bouncing with default bounce %
 
@@ -72,10 +72,10 @@ $(function () {
     // You must decide the wall you want the cannon on, the position on the wall, and the time between shots in milliseconds
     // Your wall choices are: 'top' 'left' 'right' and 'bottom'
     // example usage: createCannon(side, position, delay, width, height)
-    createCannon("left", 500, 800); // cannon on left wall, 400px down, shooting once per 30 seconds
-    createCannon("right", 490, 800); // cannon on right wall, 490px down, shooting once per second
-    createCannon("left", 250, 750); // cannon on left wall, 750px down, shooting once per second
-    createCannon("right", 100, 150); // cannon on right wall, 50px down, shooting once per second
+    createCannon("bottom", 500, 800); // cannon on bottom wall, 400px down, shooting once per 30 seconds
+    createCannon("right", 490, 800); // cannon on right wall, 490px down, shooting once per 30 seconds
+    createCannon("left", 150, 650); // cannon on left wall, 750px down, shooting once per second
+    createCannon("top", 100, 150); // cannon on top wall, 50px down, shooting once per second
 
 
 
