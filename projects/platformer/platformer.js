@@ -47,11 +47,11 @@ $(function () {
     // Create platforms
     // You must decide the x position, y position, width, and height of the platforms
     // example usage: createPlatform(x,y,width,height)
-    createPlatform(500, 300, 200, 20); // short but wide platform located 500 pixels from the left of the screen and 300 pixels from the top of the screen
-    createPlatform(600, 400, 200, 20); // short but wide platform located 600 pixels from the left of the screen and 400 pixels from the top of the screen
+    createPlatform(400, 300, 200, 20); // short but wide platform located 400 pixels from the left of the screen and 300 pixels from the top of the screen
+    createPlatform(500, 400, 200, 40); // short but wide platform located 500 pixels from the left of the screen and 400 pixels from the top of the screen
     createPlatform(200, 800, 200, 20); // short but wide platform located 200 pixels from the left of the screen and 800 pixels from the top of the screen
-    createPlatform(700, 200, 200, 20); // short but wide platform located 700 pixels from the left of the screen and 200 pixels from the top of the screen
-    createPlatform(800, 700, 200, 20); // short but wide platform located 800 pixels from the left of the screen and 700 pixels from the top of the screen
+    createPlatform(300, 200, 200, 30); // short but wide platform located 300 pixels from the left of the screen and 200 pixels from the top of the screen
+    createPlatform(600, 700, 200, 20); // short but wide platform located 600 pixels from the left of the screen and 700 pixels from the top of the screen
 
 
 
@@ -76,7 +76,7 @@ $(function () {
     createCannon("left", 400, 800); // cannon on left wall, 400px down, shooting once per second
     createCannon("right", 490, 800); // cannon on right wall, 490px down, shooting twice per second
     createCannon("left", 750, 750); // cannon on left wall, 750px down, shooting thrice per second
-    createCannon("right", 50, 150); // cannon on right wall, 50px down, shooting once per second
+    createCannon("right", 100, 150); // cannon on right wall, 50px down, shooting once per second
 
 
 
