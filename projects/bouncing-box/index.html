@@ -48,9 +48,9 @@
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
-				box.css("left", newPositionX);
-			}
+			function update() {
+				box.css("right", 200
+			};
 
 			// changes the text displayed on the Box
 			function changeBoxText(newText) {
@@ -62,7 +62,7 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			
+			var positionX=0;
 
 			
 			/* 
@@ -71,8 +71,25 @@
 			turn it around! 
 			*/
 			function update() {
-				
+				moveBoxTo(positionX);
+				var positionX = 0;
 
+// during update... 
+// Frame 1
+positionX = 0 + 10;         // positionX = 10
+moveBoxTo(positionX);
+
+// Frame 2
+positionX = 10 + 10;         // positionX = 20
+moveBoxTo(positionX);
+
+// Frame 3
+positionX = 20 + 10;         // positionX = 30
+moveBoxTo(positionX);
+
+// Frame 4
+positionX = 30 + 10;         // positionX = 40
+moveBoxTo(positionX);
 			};
 
 			/* 
@@ -80,11 +97,13 @@
 			it should increase the points total, increase the speed, and move the box to
 			the left side of the screen.
 			*/
+			
+
 			function handleBoxClick() {
-				
+				var positionX = 0;
+				changeBoxText(1);
 
 
-			};
 		})();
 	</script>
 </body>
