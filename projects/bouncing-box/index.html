@@ -47,17 +47,14 @@ cl<!DOCTYPE html>
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
 
-			function handleBoxClick (moveBoxToNewPosition)
-
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxto(newPositionX) {
+			function moveBoxTo(newPositionX) {
 				box.css("left", newPositionX)
-				moveBoxto("newPositionX");
 			};
 
 			// changes the text displayed on the Box
-			function changeBoxText(box,text) {
-				box.text(1);
+			function changeBoxText(text) {
+				box.text(text);
 			}
 
 			//////////////////////////////////////////////////////////////////
@@ -65,7 +62,7 @@ cl<!DOCTYPE html>
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			var positionX=-100;
+			var positionX = 0;
 
 			
 			/* 
@@ -74,27 +71,12 @@ cl<!DOCTYPE html>
 			turn it around! 
 			*/
 			function update() {
+				positionX = positionX + 10;
 				moveBoxTo(positionX);
-				var positionX = 500;
-				moveBoxto(boardWidth)
+				moveboxTo(boardWidth);
 			}
 // during update... 
 // Frame 1
-positionX = 0 + 10;         // positionX = 10
-moveBoxTo(positionX);
-
-// Frame 2
-positionX = 10 + 10;         // positionX = 20
-moveBoxTo(positionX);
-
-// Frame 3
-positionX = 20 + 10;         // positionX = 30
-moveBoxTo(positionX);
-
-// Frame 4
-positionX = 30 + 10;         // positionX = 40
-moveBoxTo(positionX);
-			}
 
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
@@ -103,12 +85,16 @@ moveBoxTo(positionX);
 			*/
 			
 
-		);function handleBoxClick(moveBoxTo) {
+		function handleBoxClick(moveBoxTo) {
 				var positionX = 0;
 				changeBoxText(1);
+				
+				
+				
 
 
 		};
+	})();
 	</script>
 </body>
 </html> 
