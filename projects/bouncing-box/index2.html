@@ -1,12 +1,65 @@
-<body class="board">
-    <div class="box">?</div>
-  </body>
-var position;
-var points;
-var speed;
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bouncing Box Game</title>
+    <style>
+      #box {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background-color: blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: rgb(0, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
 
-position = 0;
-points = 0;
-speed = 10;
-box.css('left', position)
-box.text(points);
+    <script>
+      // Variables
+      var box = document.getElementById("box");
+      var speed = 1;
+      var score = 0;
+
+      // Initial box position
+      var x = 0;
+      var y = 0;
+
+      // Update box position and handle bouncing
+      function updateBoxPosition() {
+        x += speed;
+        y += speed;
+
+        // Bounce off the edges
+        if (x >= window.innerWidth - 50 || x <= 0) {
+          speed *= -1;
+        }
+
+        if (y >= window.innerHeight - 50 || y <= 0) {
+          speed *= -1;
+        }
+
+        // Set box position
+        box.style.left = x + "px";
+        box.style.top = y + "px";
+      }
+
+      // Increase speed and update score on box click
+      function increaseSpeed() {
+        speed += 1;
+        score += 1;
+        box.textContent = score;
+      }
+
+      // Start the box movement
+      setInterval(updateBoxPosition, 10);
+
+      // Add click event listener to increase speed
+      box.addEventListener("click", increaseSpeed);
+    </script>
+  </body>
+</html>

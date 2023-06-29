@@ -1,112 +1,65 @@
-cl<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Bouncing Box</title>
-	<script src="jquery.min.js"></script>
-	<style>
-		.box {
-			width: 90px;
-			height: 90px;
-			background-color: rgb(235, 196, 246);
-			font-size: 300%;
-			text-align: center;
-			user-select: none;
-			display: block;
-			position: absolute;
-			top: 400px;
-			left: 500px;  /* <--- Change me! */
-		}
-		.board{
-			height: 100vh;
-		}
-	</style>
-	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+  <head>
+    <title>Bouncing Box Game</title>
+    <style>
+      #box {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background-color: blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: rgb(0, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
 
-</head>
-<body class="board">
-	<!-- HTML for the box -->
-	<div class="box">?</div>
+    <script>
+      // Variables
+      var box = document.getElementById("box");
+      var speed = 1;
+      var score = 0;
 
-	<script>
-		(function(){
-			'use strict'
-			/* global jQuery */
+      // Initial box position
+      var x = 0;
+      var y = 0;
 
-			//////////////////////////////////////////////////////////////////
-			/////////////////// SETUP DO NOT DELETE //////////////////////////
-			//////////////////////////////////////////////////////////////////
-			
-			var box = jQuery('.box');	// reference to the HTML .box element
-			var board = jQuery('.board');	// reference to the HTML .board element
-			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
+      // Update box position and handle bouncing
+      function updateBoxPosition() {
+        x += speed;
+        y += speed;
 
-			// Every 50 milliseconds, call the update Function (see below)
-			setInterval(update, 50);
-			
-			// Every time the box is clicked, call the handleBoxClick Function (see below)
-			box.on('click', handleBoxClick);
+        // Bounce off the edges
+        if (x >= window.innerWidth - 50 || x <= 0) {
+          speed *= -1;
+        }
 
-			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
-				box.css("left", newPositionX)
-			};
+        if (y >= window.innerHeight - 50 || y <= 0) {
+          speed *= -1;
+        }
 
-			// changes the text displayed on the Box
-			function changeBoxText(text) {
-				box.text(text);
-			}
+        // Set box position
+        box.style.left = x + "px";
+        box.style.top = y + "px";
+      }
 
-			//////////////////////////////////////////////////////////////////
-			/////////////////// YOUR CODE BELOW HERE /////////////////////////
-			//////////////////////////////////////////////////////////////////
-			
-			// TODO 2 - Variable declarations 
-			var positionX = 0;
+      // Increase speed and update score on box click
+      function increaseSpeed() {
+        speed += 1;
+        score += 1;
+        box.textContent = score;
+      }
 
-			
-			/* 
-			This Function will be called 20 times/second. Each time it is called,
-			it should move the Box to a new location. If the box drifts off the screen
-			turn it around! 
-			*/
-			function update() {
-				positionX = positionX + 10;
-				moveBoxTo(positionX);
-				var speed 
-				speed = 10
-				if (conditionIsTrue){
-					// then bounce every 3 seconds
-					if (positionX<minimumXCoordinate){
-					// then positive speed = true
-					}
-				}
-			}
+      // Start the box movement
+      setInterval(updateBoxPosition, 10);
 
-// during update... 
-// Frame 1
-
-			/* 
-			This Function will be called each time the box is clicked. Each time it is called,
-			it should increase the points total, increase the speed, and move the box to
-			the left side of the screen.
-			*/
-			
-
-		function handleBoxClick(moveBoxTo) {
-				var positionX = 0;
-				boxText = boxText + 1
-				changeBoxText(points);
-				points = points + 1
-				handleBoxClick = speed + 3
-				
-
-
-		};
-		
-	
-	})();
-	</script>
-</body>
-</html> 
-
+      // Add click event listener to increase speed
+      box.addEventListener("click", increaseSpeed);
+    </script>
+  </body>
+</html>
