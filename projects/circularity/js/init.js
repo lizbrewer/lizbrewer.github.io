@@ -20,13 +20,16 @@ var init = function (window) {
         ////////////////////////////////////////////////////////////
         
         // TODO 1 : Declare and initialize our variables
-
+var circle; 
+var circles = [];
 
         // TODO 2 : Create a function that draws a circle 
-        
+        function drawCircle(randomVelocity, child, blue,)
 
         // TODO 3 / 7 : Call the drawCircle() function 
+      for (var loopsCompleted = 0; loopsCompleted < 100; loopsCompleted++){
 
+      }
 
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
@@ -39,13 +42,21 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the circle's position //
+            physikz.updatePosition(circles)
+            for (var i = 0; i < myArray.length; i++){
+                
+            }
+           }
 
             
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
            
+          
+
 
             // TODO 9 : Iterate over the array
-           
+           physikz.updatePosition(circles[i]);
+           game.checkCirclePosition(circles[i]);
             
         }
     
@@ -59,6 +70,15 @@ var init = function (window) {
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
             if ( circle.x > canvas.width ) {
                 circle.x = 0;
+                if (circle.x > canvas.bottom){
+                    circle.x = 0;
+                    if (circle.x > canvas.top){
+                        circle.x = 0;
+                        if (circle.x > canvas.right){
+                            circle.x = 0;
+                        }
+                    }
+                }
             }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
@@ -82,7 +102,7 @@ var init = function (window) {
         
         app.addUpdateable(window.opspark.game);
     }
-};
+;
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&

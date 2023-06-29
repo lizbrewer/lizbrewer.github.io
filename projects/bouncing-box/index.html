@@ -73,8 +73,16 @@ cl<!DOCTYPE html>
 			function update() {
 				positionX = positionX + 10;
 				moveBoxTo(positionX);
-				moveboxTo(boardWidth);
+				var speed 
+				speed = 10
+				if (conditionIsTrue){
+					// then bounce every 3 seconds
+					if (positionX<minimumXCoordinate){
+					// then positive speed = true
+					}
+				}
 			}
+
 // during update... 
 // Frame 1
 
@@ -87,14 +95,18 @@ cl<!DOCTYPE html>
 
 		function handleBoxClick(moveBoxTo) {
 				var positionX = 0;
-				changeBoxText(1);
-				
-				
+				boxText = boxText + 1
+				changeBoxText(points);
+				points = points + 1
+				handleBoxClick = speed + 3
 				
 
 
 		};
+		
+	
 	})();
 	</script>
 </body>
 </html> 
+
